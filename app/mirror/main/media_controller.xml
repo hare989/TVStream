@@ -1,0 +1,15 @@
+<!-- [ Mirror metadata ] generatedAt: 1465915084761 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/media_controller">
+        <!-- TextView Examples:
+        <time_current text="@string/string_resource" />
+        <time_current text="Text literal" textSize="14sp" /> -->
+        <time_current />
+        <time />
+    </_content>
+</screen>

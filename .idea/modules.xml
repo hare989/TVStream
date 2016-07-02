@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TVStream.iml" filepath="$PROJECT_DIR$/TVStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exomedia-2.5.6/exomedia-2.5.6.iml" filepath="$PROJECT_DIR$/exomedia-2.5.6/exomedia-2.5.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exomedia-2.5.6-javadoc/exomedia-2.5.6-javadoc.iml" filepath="$PROJECT_DIR$/exomedia-2.5.6-javadoc/exomedia-2.5.6-javadoc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flexjson-2.1/flexjson-2.1.iml" filepath="$PROJECT_DIR$/flexjson-2.1/flexjson-2.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-json/java-json.iml" filepath="$PROJECT_DIR$/java-json/java-json.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okhttp-3.3.0/okhttp-3.3.0.iml" filepath="$PROJECT_DIR$/okhttp-3.3.0/okhttp-3.3.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okio-1.8.0/okio-1.8.0.iml" filepath="$PROJECT_DIR$/okio-1.8.0/okio-1.8.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
+    </modules>
+  </component>
+</project>

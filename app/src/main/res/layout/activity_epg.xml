@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--<ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/svChannelChooser"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp" >
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton3" />
+    </ScrollView>-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sinan.tvstream.EPGActivity">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="172dp"
+            android:layout_height="417dp"
+            android:layout_gravity="right|bottom"
+            android:background="#061939"
+            android:id="@+id/llMenu"
+            android:alpha="0.5"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-185dp" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/llLogoutMenuItem" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgLogout"
+                    android:src="@drawable/logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Logout"
+                    android:id="@+id/txtLogout"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="5dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.sinan.tvstream.EPGActivity"
+    android:orientation="vertical"
+    android:background="#2e4770">
+
+    <!--<android.support.v7.widget.RecyclerView
+        android:id="@+id/recyChannelEPG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView> -->
+    
+    <!--<android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:elevation="4dp"
+        android:background="#061939"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/AppBarOverlay"
+        android:id="@+id/myToolbar"
+        android:layout_marginBottom="10dp"></android.support.v7.widget.Toolbar>-->
+
+   <!-- <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#061939">
+
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:text="New Button"
+            android:id="@+id/button"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_alignWithParentIfMissing="false" />
+    </RelativeLayout>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:background="#051a39"
+        android:id="@+id/llCustomAppMenu">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/imgAppLogo"
+            android:src="@drawable/morescreens_logopng"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="TVStream"
+            android:id="@+id/txtAppName"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/imgAppLogo"
+            android:layout_marginLeft="7dp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/menuHolder">
+
+            <ImageButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imgBtnMenu"
+                android:layout_alignParentEnd="false"
+                android:src="@drawable/menu32"
+                android:background="#051a39"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:background="#051a39">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imgBtnChooseChannel"
+            android:layout_weight="1"
+            android:background="#051a39"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <!-- <Spinner
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/spinChannels"
+             android:layout_weight="1"
+             android:background="#051a39"
+             android:layout_marginLeft="5dp"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp" />-->
+
+         <ImageButton
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/imgBtnPlayChannel"
+             android:layout_weight="1"
+             android:src="@drawable/ic_media_play"
+             android:background="#051a39"
+             android:nestedScrollingEnabled="false"
+             android:layout_marginTop="5dp"
+             android:layout_marginBottom="5dp" />
+
+         <Spinner
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/spinDates"
+             android:layout_weight="1"
+             android:background="#ffffff"
+             android:layout_marginRight="5dp"
+             android:layout_marginTop="5dp" />
+     </LinearLayout>
+
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="35dp"
+         android:layout_marginLeft="10dp"
+         android:layout_marginTop="10dp"
+         android:layout_marginRight="10dp"
+         android:orientation="horizontal"
+         android:weightSum="3"
+         android:background="#051a39">
+
+         <Spinner
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/spinChannels"
+             android:layout_weight="1"
+             android:clickable="false"
+             android:background="@android:color/white" />
+
+         <ImageButton
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/imageButton2"
+             android:layout_weight="1"
+             android:src="@drawable/ic_media_play"
+             android:background="#051a39" />
+
+         <Spinner
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/spinDates"
+             android:layout_weight="1"
+             android:background="#ffffff" />
+     </LinearLayout>-->
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="10dp">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:id="@+id/imgCurrentProgramme"
+            android:contentDescription="Current Programme Image"
+            android:scaleType="fitXY"
+            android:src="@drawable/transformers4" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentBottom="true"
+                android:background="#2e4770"
+                android:alpha="0.7"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Title"
+                    android:id="@+id/txtCurrentProgrammeTitle"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="-10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Start"
+                            android:id="@+id/txtCurrentProgrammeStart"
+                            android:textColor="#ffffff"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Start"
+                            android:id="@+id/txtCurrentProgrammeStop"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="false"
+                            android:layout_alignParentBottom="false"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pbCurrentProgrammeDuration"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:background="#2e4770"
+                android:alpha="0.5">
+
+
+
+            </LinearLayout>-->
+
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvChannelProgramme"
+        android:dividerHeight="5dp"
+        android:footerDividersEnabled="false"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:descendantFocusability="blocksDescendants"/>
+</LinearLayout>
+</RelativeLayout>

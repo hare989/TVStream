@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sinan.tvstream.HomeActivity"
+    android:background="#e23944b8"
+    android:orientation="vertical">
+
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/channelViewPager"
+            android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="113dp"
+            android:text="@string/btnVodic_string"
+            android:id="@+id/btnEPG"
+            android:drawableLeft="@drawable/search_icon"
+            android:layout_weight="1"
+            android:textSize="13sp" />
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="113dp"
+            android:text="@string/btnArhivaSadrzaja_string"
+            android:id="@+id/btnArhivaSadrzaja"
+            android:drawableLeft="@drawable/search_icon"
+            android:layout_weight="1"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

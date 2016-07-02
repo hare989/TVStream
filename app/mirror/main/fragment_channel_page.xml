@@ -1,0 +1,21 @@
+<!-- [ Mirror metadata ] generatedAt: 1465915084757 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/fragment_channel_page">
+        <!-- ImageView Examples:
+        <imgSliderCurrentShow src="@drawable/image_resource" />
+        <imgSliderCurrentShow src="relative_path/image.jpg" /> -->
+        <imgSliderCurrentShow />
+        <imgCurrentShowChanell />
+        <!-- TextView Examples:
+        <txtCurrentShowTitle text="@string/string_resource" />
+        <txtCurrentShowTitle text="Text literal" textSize="14sp" /> -->
+        <txtCurrentShowTitle />
+        <txtProgrammeStart />
+        <txtProgrammeEnd />
+    </_content>
+</screen>

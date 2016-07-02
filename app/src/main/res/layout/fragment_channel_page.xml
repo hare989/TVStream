@@ -1,0 +1,92 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sinan.tvstream.Fragments.channelPage"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:id="@+id/imgSliderCurrentShow"
+        android:contentDescription="Current programme icon" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/imgSliderCurrentShow"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_toEndOf="@id/imgSliderCurrentShow"
+        android:paddingLeft="10dp"
+        android:gravity="left">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:layout_width="110dp"
+            android:layout_height="45dp"
+            android:id="@+id/imgCurrentShowChanell"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="The Bing Bang Theory S01EO1"
+            android:id="@+id/txtCurrentShowTitle" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtProgrammeStart"
+                    android:layout_gravity="bottom"
+                    android:textSize="9sp"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:id="@+id/txtProgrammeEnd"
+                    android:layout_gravity="bottom"
+                    android:textSize="9sp"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pbCurrentProgramme"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                android:progress="50"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
