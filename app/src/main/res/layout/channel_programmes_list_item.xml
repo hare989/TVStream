@@ -13,7 +13,7 @@
         android:scaleType="fitXY" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="1dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/txtProgrammeTitle"
@@ -23,7 +23,8 @@
         android:layout_marginLeft="10dp"
         android:textColor="#e9f4ff"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/imgEPGProgramme" />
+        android:layout_toRightOf="@+id/imgEPGProgramme"
+        android:layout_toStartOf="@id/txtProgrammeStart" />
 
     <TextView
         android:layout_width="wrap_content"

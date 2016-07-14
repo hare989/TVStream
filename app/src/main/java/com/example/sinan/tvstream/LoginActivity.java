@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements Button.OnClickLi
     private EditText etxtUsername;
     private Button btnLogin;
     private ProgressBar progress;
+    private JSONObject loginData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,6 @@ public class LoginActivity extends AppCompatActivity implements Button.OnClickLi
             String password = etxtPassword.getText().toString();
             Log.e("Username and password", username+" "+password);
 
-            JSONObject loginData = new JSONObject();
 
             try {
                 if(username.isEmpty() || password.isEmpty()) {
@@ -75,15 +75,17 @@ public class LoginActivity extends AppCompatActivity implements Button.OnClickLi
                 }
                 else{
 
+                    loginData = new JSONObject();
                     loginData.put("username", username);
                     loginData.put("password", password);
-                    PrefsUtil.saveToPrefs(PrefsUtil.PREFS_LOGIN_USER_DATA_KEY, loginData.toString());
+
 
                     HttpHelper httpHelper = new HttpHelper();
                      httpHelper.doLogin(loginData, new HttpHelper.VolleyCallback() {
                          @Override
                          public void onSuccessJSON(JSONObject result) {
                              //app.setLoginData(result);
+                             PrefsUtil.saveToPrefs(PrefsUtil.PREFS_LOGIN_USER_DATA_KEY, loginData.toString());
                              Log.e(TAG, "onSuccess callback "+result.toString());
 
                          }

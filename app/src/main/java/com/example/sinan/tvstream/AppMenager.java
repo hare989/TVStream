@@ -393,8 +393,8 @@ public class AppMenager extends Application {
                         identify(Request.Method.PUT);
                     }else if(error instanceof NoConnectionError){
                         Log.e("identify onError","NoConnectionError:"+error.toString());
-                        //
-                        // showAlertDialog();
+
+                        //showAlertDialog();
                     }
                     else if (error instanceof AuthFailureError) {
                         Log.e("identify onError","AuthFailure:"+error.toString());

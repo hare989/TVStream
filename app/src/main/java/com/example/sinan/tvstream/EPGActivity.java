@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -91,6 +93,8 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
     private LinearLayout llLogoutMenuItem;
     private boolean isMenuAnimated=false;
     private ImageButton imgBtnMenu;
+    private boolean showingProgrammeDetails = false;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +148,9 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
 
             changeCurrentProgrammeImage();
             updateDateRangeList();
+
+            drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
 
             llCustomAppMenu = (LinearLayout) findViewById(R.id.llCustomAppMenu);
             llMenu = (LinearLayout) findViewById(R.id.llMenu);
@@ -272,6 +279,7 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
 
 
             spinDates.setAdapter(datesAdapter);
+            spinDates.setSelection(2);
             spinDates.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -297,6 +305,7 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
             adapter = new MyProgrammeArrayAdapter(this, R.layout.channel_programmes_list_item, channelProgrammes);
             lvChannelProgrammes.setAdapter(adapter);
             lvChannelProgrammes.setOnItemClickListener(this);
+
            /* lvChannelProgrammes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -343,7 +352,7 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
                                         break;
 
             case R.id.imgBtnMenu: Log.e(TAG, "Menu onClick");
-                                     if(isMenuAnimated){
+                                     /*if(isMenuAnimated){
                                          Log.e(TAG, "PlayerMenu onClick clearAnimation");
                                          translateView(llMenu, llMenu.getWidth());
                                          Log.e(TAG, "on Animate x:"+llMenu.getX()+" y:"+llMenu.getY());
@@ -353,7 +362,12 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
                                          Log.e(TAG, "on clear Animation x:"+llMenu.getX()+" y:"+llMenu.getY());
                                      }
 
-                                     isMenuAnimated = !isMenuAnimated;
+                                     isMenuAnimated = !isMenuAnimated;*/
+                                    Log.e( TAG, "Drawer Layout "+drawerLayout);
+                                    if(!drawerLayout.isDrawerOpen(GravityCompat.END))
+                                       drawerLayout.openDrawer(GravityCompat.END);
+                                    else
+                                        drawerLayout.closeDrawer(GravityCompat.END);
         }
 
 
@@ -367,28 +381,31 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Log.e(TAG, "AdapterView.OnItemClick: "+view+" "+parent+" "+position);
-        EPG.Programme selectedProg = channelProgrammes.get(position);
+        if (!showingProgrammeDetails) {
+            showingProgrammeDetails = true;
+            EPG.Programme selectedProg = channelProgrammes.get(position);
 
-        View detailsView = getDetailsView(selectedProg);
+            View detailsView = getDetailsView(selectedProg);
 
-        final PopupWindow popupProgrammeDetails = new PopupWindow(detailsView);
-        popupProgrammeDetails.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupProgrammeDetails.setWidth(WindowManager.LayoutParams.WRAP_CONTENT);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            popupProgrammeDetails.setOverlapAnchor(true);
-        }
-        ImageButton imgBtnClose = (ImageButton) detailsView.findViewById(R.id.imgBtnClose);
-        imgBtnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupProgrammeDetails.dismiss();
+            final PopupWindow popupProgrammeDetails = new PopupWindow(detailsView);
+            popupProgrammeDetails.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
+            popupProgrammeDetails.setWidth(WindowManager.LayoutParams.WRAP_CONTENT);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                popupProgrammeDetails.setOverlapAnchor(true);
             }
-        });
+            ImageButton imgBtnClose = (ImageButton) detailsView.findViewById(R.id.imgBtnClose);
+            imgBtnClose.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupProgrammeDetails.dismiss();
+                    showingProgrammeDetails = false;
+                }
+            });
 
 
-
-        popupProgrammeDetails.setAnimationStyle(R.style.popupAnimation);
-        popupProgrammeDetails.showAsDropDown(llCustomAppMenu);
+            popupProgrammeDetails.setAnimationStyle(R.style.popupAnimation);
+            popupProgrammeDetails.showAsDropDown(llCustomAppMenu);
+        }
 
 
     }
@@ -437,6 +454,7 @@ public class EPGActivity extends Activity implements View.OnClickListener, Adapt
         else {
             datesAdapter = new MyDateArrayAdapter(this, R.layout.channel_spinner_row, dateRangeList);
         }
+
         Log.e(TAG, "in updateDateRangeList after create datesAdapter dateRangeList.size()="+dateRangeList.size());
     }
 
